@@ -1,0 +1,5 @@
+Consigna 1:
+Que pasa cuando no es inversible, no falla la ecuacion????
+
+Consigna 2:
+Con que matrices quieren que lo probemos
