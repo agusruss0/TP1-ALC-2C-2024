@@ -2,4 +2,19 @@ Consigna 1:
 Que pasa cuando no es inversible, no falla la ecuacion????
 
 Consigna 2:
-Con que matrices quieren que lo probemos
+Con que matrices quieren que lo probemos??
+Es necesario hacer pivoteo?? SI, pero como devolvemos solo LU??
+
+Consigna 3:
+Condicionamiento?
+metodo calculo nro condicion uno alto otro bajo
+
+
+Consigna 4:
+
+Consigna 5:
+
+Consigna 6:
+
+Consigna 7:
+shock negativo, shock positivo ???
