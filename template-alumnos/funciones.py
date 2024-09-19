@@ -31,6 +31,20 @@ def calcularPLU(A):
     return L, U, P
 
 
+def calcularLU(A):
+    rows, cols = A.shape
+    L = np.eye(rows, cols)
+    U = A.copy()
+
+    for i in range(rows):
+        for j in range(i + 1, rows):
+            factor = U[j, i] / U[i, i]
+            U[j, i:] = U[j, i:] - factor * U[i, i:]
+            L[j, i] = factor
+
+    return L, U
+
+
 def inversaLU(L, U):
     rows, cols = L.shape
     Inv = np.zeros(L.shape)
