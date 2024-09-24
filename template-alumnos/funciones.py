@@ -62,22 +62,3 @@ def solve_LU(L, U, b):
     y = sp.linalg.solve_triangular(L, b, lower=True)
     x = sp.linalg.solve_triangular(U, y)
     return x
-
-
-A = np.array([[1, -1, 0, 1], [0, 1, 4, 0], [2, -1, 0, -2], [-3, 3, 0, -1]])
-rows, cols = A.shape
-id = np.eye(rows, cols)
-
-leontief = id - A
-L, U, P = calcularPLU(leontief)
-print(leontief)
-print(L)
-print(U)
-print(P)
-print("A permutada:\n", L @ U)
-print(np.linalg.inv(P))
-pa_inversa = inversaLU(L,U)
-print("A permutada inversa: \n", pa_inversa)
-A_inversa = pa_inversa @ P
-print("A inversa: \n", A_inversa)
-print("Leontief:\n", np.linalg.inv(leontief))
