@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np  # type:ignore
 import scipy as sp  # type:ignore
 
 
@@ -54,11 +54,16 @@ def inversaLU(L, U):
 
     return Inv
 
-def inversaLUpivot(L,U,P):
-    return inversaLU(L,U) @ P
+
+def inversaLUpivot(L, U, P):
+    return inversaLU(L, U) @ P
 
 
 def solve_LU(L, U, b):
     y = sp.linalg.solve_triangular(L, b, lower=True)
     x = sp.linalg.solve_triangular(U, y)
     return x
+
+
+def calcular_coeficientes_tecnicos(Z, P):
+    return Z @ inversaLUpivot(*calcularPLU(P))
