@@ -3,13 +3,15 @@ import scipy as sp  # type:ignore
 
 
 def calcularPLU(A):
+    """Calcula L,U de una matriz A usando el metodo de pivoteo parcial."""
     rows, cols = A.shape
     L = np.eye(rows, cols)
     U = A.copy()
     P = np.eye(rows, cols)
-    for i in range(rows):
-        k_pivot = 1
-        P_i = np.eye(rows, cols)
+    for i in range(rows):                     # Para cada fila en la columna i armamos la matriz pivot P_i
+        k_pivot = i + 1                       # que permite triangula la matriz en el caso de 
+        P_i = np.eye(rows, cols)              # que haya 0 en la diagonal
+
         while U[i, i] == 0:
             if U[k_pivot, i] != 0:
                 pivot = U[i, i:].copy()
